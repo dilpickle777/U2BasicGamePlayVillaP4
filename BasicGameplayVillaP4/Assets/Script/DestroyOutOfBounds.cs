@@ -15,11 +15,16 @@ public class DestroyOutOfBounds : MonoBehaviour
     private float lowerBound = -10;
 
     void Update() { 
-    {
-        if (transform.position.z > 50)
-        {
-            Destroy(gameObject);
-        } else if (transform.position.z < lowerBound)
-            Destroy(gameObject);
+    {   
+            // If an object goes past the players view in the game, remove that object
+            if (transform.position.z > 50)
+            {
+                Destroy(gameObject);
+            }
+            else if (transform.position.z < lowerBound)
+            {
+                Debug.Log("Game Over!");
+                Destroy(gameObject);
+            } 
     } } 
 }
